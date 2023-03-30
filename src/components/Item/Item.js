@@ -7,6 +7,7 @@ const Item = ( {item} ) => {
             <p>{item.description}</p>
             <p>Precio: ${item.price}</p>
             <button className='btn btn-primary'>Ver más</button>
+            <p><small>Categoría: {item.category}</small></p>
         </div>
     )
 }

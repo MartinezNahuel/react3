@@ -13,6 +13,7 @@ return(
 
       <Routes>
         <Route path='/' element={ <ItemListContainer /> }/>
+        <Route path='/productos/:categoryId' element={ <ItemListContainer /> }/>
         <Route path='/nosotros' element={ <Nosotros /> }/>
         <Route path='*' element={ <Navigate to={"/"}/> }/>
         <Route path='/pokeapi' element={<PokeApi /> }/>
