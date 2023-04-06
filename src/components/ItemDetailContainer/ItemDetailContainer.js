@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
 
         pedirDatos()
             .then((res) => {
-                setItem( res.find((prod) => prod.id === parseInt(itemId)) )
+                setItem( res.find((prod) => prod.id === Number(itemId)) )
             })
             .finally(() => {
                 setLoading(false)

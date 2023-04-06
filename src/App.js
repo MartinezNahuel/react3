@@ -5,7 +5,7 @@ import { BrowserRouter,Route,Routes,Navigate } from 'react-router-dom';
 import Nosotros from './components/Nosotros/Nosotros';
 import PokeApi from './ejemplos/PokeApi/PokeApi';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+
 
 function App() {
 return(
@@ -16,7 +16,7 @@ return(
       <Routes>
         <Route path='/' element={ <ItemListContainer /> }/>
         <Route path='/productos/:categoryId' element={ <ItemListContainer /> }/>
-        <Route path='/detail/:itemd' element={<ItemDetailContainer/> }/>
+        <Route path='/detail/:itemId' element={<ItemDetailContainer/> }/>
         <Route path='/nosotros' element={ <Nosotros /> }/>
         <Route path='*' element={ <Navigate to={"/"}/> }/>
         <Route path='/pokeapi' element={<PokeApi /> }/>
