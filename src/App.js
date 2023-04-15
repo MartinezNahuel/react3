@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Nosotros from './components/Nosotros/Nosotros';
 import PokeApi from './ejemplos/PokeApi/PokeApi';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { CartContext } from './context/CartContext';
+import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
 
 
@@ -13,7 +13,7 @@ function App() {
 
 
   return (
-    <CartContext.Provider>
+    <CartProvider>
 
       <BrowserRouter>
 
@@ -32,7 +32,7 @@ function App() {
         {/* <Footer /> */}
 
       </BrowserRouter>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
