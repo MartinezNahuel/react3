@@ -9,13 +9,7 @@ const handleSumar = () => {
 cantidad < max &&  setCantidad (cantidad+1)
     
 }
-// const handleAgregar =()=>{
-//         const itemToAdd={
-//         ...item,
-//         cantidad
-//     }
-//     console.log(itemToAdd)
-// }
+ 
 
     return(
         <div>
