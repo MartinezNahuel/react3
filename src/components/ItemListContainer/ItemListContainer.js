@@ -3,6 +3,7 @@ import { pedirDatos } from '../../helpers/pedirDatos'
 import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 import { useParams } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 
 
 const ItemListContainer = () => {
@@ -11,7 +12,6 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true)
 
     const { categoryId } = useParams()
-    console.log(categoryId)
 
     useEffect(() => {
         setLoading(true)
@@ -19,7 +19,7 @@ const ItemListContainer = () => {
         pedirDatos()
             .then((res) => {
                 if (categoryId) {
-                    setProductos( res.filter((prod) => prod.category === categoryId) )
+                    setProductos(res.filter((prod) => prod.category === categoryId))
                 } else {
                     setProductos(res)
                 }
@@ -34,12 +34,11 @@ const ItemListContainer = () => {
 
     return (
         <div className="container my-5">
-
-            {
-                loading
-                    ? <h2>Cargando...</h2>
-                    : <ItemList items={productos}/>
+            {loading
+                ? <Loader />
+                : <ItemList items={productos} />
             }
+
         </div>
     )
 }
