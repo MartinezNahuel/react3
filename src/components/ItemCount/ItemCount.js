@@ -9,7 +9,6 @@ const handleSumar = () => {
 cantidad < max &&  setCantidad (cantidad+1)
     
 }
- 
 
     return(
         <div>

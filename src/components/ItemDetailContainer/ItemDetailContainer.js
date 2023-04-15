@@ -6,13 +6,11 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 const ItemDetailContainer = () => {
-    const [item, setItem] = useState([])
+
+    const [item, setItem] = useState(null)
     const [loading, setLoading] = useState(true)
 
     const { itemId } = useParams()
-
-    console.log(item)
-    console.log(itemId)
 
     useEffect(() => {
         setLoading(true)
@@ -25,8 +23,6 @@ const ItemDetailContainer = () => {
                 setLoading(false)
             })
     }, [itemId])
-
-    console.log(item)
 
     return (
         <div className="container my-5">
