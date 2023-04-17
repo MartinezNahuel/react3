@@ -1,11 +1,10 @@
-import { useContext, useMemo, useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
-import Memo from "./Memo"
 
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
     const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
     const [cantidad, setCantidad] = useState(1)
@@ -19,31 +18,27 @@ const ItemDetail = ({item}) => {
         agregarAlCarrito(newItem)
     }
 
-    const fechaMontaje = useMemo(() => {
-        return new Date()
-    }, [cantidad])
+
 
     return (
         <div>
             <h2>{item.name}</h2>
-            <hr/>
-            <img src={item.img} alt={item.name}/>
+            <hr />
+            <img src={item.img} alt={item.name} />
             <p>{item.description}</p>
             {item.stock <= 5 && <p><strong>Quedan sólo {item.stock} unidades!</strong></p>}
             <p>Precio: ${item.price}</p>
 
-            <p>Fecha de montaje: {fechaMontaje.toLocaleString()}</p>
-            <Memo />
 
             {
                 isInCart(item.id)
-                    ?   <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
-                    :   <ItemCount 
-                            stock={item.stock}
-                            cantidad={cantidad}
-                            setCantidad={setCantidad}
-                            agregar={handleAgregar}
-                        />
+                    ? <Link to="/cart" className="btn btn-success">Finalizar con mi compra</Link>
+                    : <ItemCount
+                        stock={item.stock}
+                        cantidad={cantidad}
+                        setCantidad={setCantidad}
+                        agregar={handleAgregar}
+                    />
             }
 
         </div>
