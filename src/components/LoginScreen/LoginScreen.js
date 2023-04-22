@@ -26,7 +26,7 @@ const LoginScreen = () => {
     return (
         <div className="login-container">
             <div className="login">
-                <h2>Login</h2>
+                <h2>Ingresar</h2>
                 <hr/>
 
                 <form onSubmit={handleSubmit}>

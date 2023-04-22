@@ -7,6 +7,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Checkout from '../components/Checkout/Checkout';
 
 
+
 const PrivateRoutes = () => {
 
     return (
@@ -21,7 +22,6 @@ const PrivateRoutes = () => {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='*' element={<Navigate to={"/"} />} />
             </Routes>
-
         </>
     )
 }
