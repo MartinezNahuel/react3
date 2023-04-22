@@ -72,9 +72,9 @@ const Checkout = () => {
     if (orderId) {
         return (
             <div className="container my-5">
-                <h2>Tu compra se registró exitosamente!</h2>
+                <h2 className="bs-danger">Tu compra se realizo exitosamente!</h2>
                 <hr/>
-                <p>Guardá tu número de orden: <strong>{orderId}</strong></p>
+                <p>Tu numero de orden es: <strong>{orderId}</strong></p>
             </div>
         )
     }

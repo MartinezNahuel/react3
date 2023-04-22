@@ -4,5 +4,6 @@
 }
 
 .list-container__title {
-    color: red;
+    color: black;
+    font-weight: bold;
 }
